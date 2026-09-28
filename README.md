@@ -28,8 +28,15 @@ Meskipun array list dideklarasikan dengan tipe induk (`ArrayList<Shape>`), ia da
 ---
 
 ## Hasil Eksekusi Program (Output)
+![Hasil Output Program Geometri](Output/output.png)
 
 ### Penjelasan Alur Menu:
-1. **Menu 1, 2, 3 (Pembuatan Objek):** Pengguna diminta menginputkan dimensi (sisi/radius/tinggi) beserta warnanya. Objek akan dibuat sesuai jenisnya dan dimasukkan ke dalam `ArrayList<Shape>`.
-2. **Menu 4 (Tampilkan Semua Bentuk):** Program mencetak informasi seluruh bentuk yang telah dibuat sebelumnya. Ini membuktikan bahwa metode `printInfo()` yang dieksekusi berbeda-beda tergantung jenis bangunannya (berkat *Method Overriding*), meskipun semuanya dipanggil dari *list* bertipe `Shape`.
-3. **Menu 5 (Keluar):** Menghentikan program.
+1. **Membuat Objek Square (Menu 1):** Pengguna terlebih dahulu memilih menu 1 (pesan menunya sudah tergeser ke atas pada gambar), kemudian memasukkan panjang sisi **3** dan warna **biru**. Objek `Square` berhasil dibuat.
+2. **Membuat Objek Circle (Menu 2):** Pengguna memilih menu 2, lalu memasukkan radius **5** dan warna **biru**. Objek `Circle` berhasil ditambahkan ke dalam list.
+3. **Membuat Objek Cylinder (Menu 3):** Pengguna memilih menu 3, lalu memasukkan radius alas **6**, tinggi silinder **3**, dan warna **biru**. Objek `Cylinder` berhasil ditambahkan.
+4. **Demonstrasi Polimorfisme (Menu 4):** Pengguna memilih menu 4 untuk mencetak semua bentuk yang telah dibuat. Program menampilkan:
+   * `Square colored biru, area = 9.0` (Luas persegi dihitung dari 3 x 3).
+   * `Circle biru, area = 78.53975` (Luas lingkaran dihitung dari PI x 5²).
+   * `Cylinder biru, volume = 339.29171999999994` (Volume silinder dihitung dari luas alas x tinggi, yaitu [PI x 6²] x 3).
+   
+   **Kesimpulan:** Meskipun ketiga bentuk tersebut dipanggil secara serentak menggunakan metode `printInfo()` dari wadah/tipe data induk yang sama (`Shape`), format teks dan perhitungan nilainya keluar berbeda-beda sesuai dengan wujud aslinya. Inilah wujud nyata dari konsep **Polimorfisme**.
